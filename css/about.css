@@ -1,0 +1,208 @@
+.parallax {
+	background-image: url("../images/header_image.jpg");
+	min-height: 400px;
+	width: 100%;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.about-wrap {
+	margin-top: 0;
+}
+
+.about-content {
+	background-color: #E6DFD9;
+	border-radius: 4px;
+	margin-bottom: 40px;
+}
+
+.about-text {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin: 0 auto;
+	width: 90%;
+}
+
+/*.flipcard:hover .thecard {
+	transform: rotateY(180deg);
+}*/
+
+.flip-wrap *{
+	box-sizing: border-box;
+}
+
+.flip-wrap{
+	background-color: transparent;
+	width: 200px;
+	height: 250px;
+	justify-content: center;
+	align-items: center;
+	/*border: 1px solid #f1f1f1;*/
+	perspective: 1000px;
+	padding-bottom: 40px;
+	margin: 0 auto;
+}
+
+.flip-wrap.flip .thecard {
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+}
+
+.thecard, .front, .back{
+	width: 100%;
+	height: 100%;
+}
+
+.thecard {
+	position: relative;
+	transform-style: preserve-3d;
+	transition: transform 1s;
+	-webkit-transition: transform 1s;
+}
+
+.front, .back {
+	position: absolute;
+	backface-visibility: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 4px;
+}
+
+.front {
+	background-color: #ADD4EF;
+	border: 2px solid #2A6F9E;
+	font-weight: bold;
+	color: black;
+}
+
+.back {
+	background-color: #2A6F9E;
+	color: white;
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+}
+
+.message-wrap {
+	padding-top: 10px;
+	padding-bottom: 30px;
+}
+
+h2 {
+	text-align: center;
+}
+
+/*
+form reference:
+https://www.w3schools.com/css/css_form.asp
+
+flipcard reference:
+https://www.youtube.com/watch?v=Lc6wyl1KdOc (flip on click)
+https://stackoverflow.com/questions/38261931/implementing-flipcard-on-click-instead-of-on-hover
+https://codepen.io/RuudBurger/pen/bwjry
+https://www.w3schools.com/howto/howto_css_flip_card.asp
+https://www.google.com/search?q=css+how+to+do+a+keyboard+accessible+flip+card&oq=css+how+to+do+a+keyboard+accessible+flip+card&aqs=chrome..69i57j69i64.2385j0j1&sourceid=chrome&ie=UTF-8#kpvalbx=_UKtxXpbuH8O4tAaa_ayIAg32;
+*/
+
+form * {
+	box-sizing: border-box;
+}
+
+form {
+	padding-bottom: 40px;
+}
+
+input[type=text], textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	resize: vertical;
+}
+
+textarea {
+	height: 200px;
+}
+
+label {
+	padding: 12px 12px 12px 0;
+	display: inline-block;
+}
+
+input[type=submit] {
+	background-color: #FC7075;
+	color: white;
+	font-size: 0.8rem;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: #984044;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+input[type=submit] {
+	width: 80px;
+	margin-top: 10px;
+}
+
+.col-25, .col-75 {
+	width: 100%;
+	margin-top: 0;
+}
+
+
+@media screen and (min-width: 880px) {
+
+	.message-wrap {
+		padding-top: 25px;
+	}
+
+	.about-text {
+		width: 80%;
+	}
+
+	form {
+		width: 600px;
+		margin: 0 auto;
+	}
+
+	.col-25 {
+		float: left;
+		width: 25%;
+		margin-top: 6px;
+	}
+
+	.col-75 {
+		float: left;
+		width: 75%;
+		margin-top: 6px;
+	}
+
+	.col-25 label {
+		text-align: right;
+	}
+
+	input[type=submit] {
+		float: right;
+	}
+
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	.thecard {
+		transition: none;
+		-webkit-transition: none;
+	}
+}

@@ -1,0 +1,70 @@
+body, html {
+	background-color: white;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+
+.outcome-img {
+	max-width: 100%;
+}
+
+.project-name {
+	margin-top: 40px;
+	margin-bottom: 60px;
+	text-align: center;
+}
+
+.project-name h1 {
+	font-weight: bolder;
+}
+
+.project-name h2 {
+	font-weight: lighter;
+	font-size: 1.2rem;
+	color: #555;
+}
+
+.overview-title {
+	color: #333;
+	font-weight: bolder;
+	font-style: italic;
+}
+
+.proj-item {
+	padding-top: 15px;
+}
+
+.intro, .proj-item p {
+	color: #555;
+}
+
+.proj-item h3 {
+	color: #333;
+	font-size: 1.4rem;
+	font-weight: bolder;
+}
+
+.back {
+	padding-top: 40px;
+	padding-bottom: 30px;
+}
+
+.back-link {
+	color: #C13136;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.back-link:hover {
+	color: #853639;
+	text-decoration: underline;
+}
+
+@media screen and (min-width: 880px) {
+	.intro, .proj-item, .back{
+		margin: 0 auto;
+		width: 70%;
+	}
+}

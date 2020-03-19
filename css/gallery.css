@@ -1,0 +1,240 @@
+body, html {
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+nav {
+	margin-bottom: 0;
+}
+
+.content-wrap {
+	display: flex;
+}
+
+.leading {
+	height: 240px;
+	margin-bottom: 30px;
+	padding: 30px;
+	color: white;
+	background: url("../images/dog5.jpg") center #333 no-repeat;
+	background-size: cover;
+	text-shadow: 0px 0px 5px #000;
+}
+
+.cards {
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: 1fr;
+	margin: 0 auto 30px;
+}
+
+article {
+	position: relative;
+	width: 100%;
+	grid-column: auto / span 1;
+	grid-row: auto / span 1;
+}
+
+.card-img {
+	max-height: 400px;
+	width: 100%;
+	object-fit: cover;
+}
+
+.card-img:hover {
+	transform: scale(1.04);
+	-webkit-transform: scale(1.04);
+	opacity: .75;
+}
+
+
+/*caption on hover: 
+https://stackoverflow.com/questions/15856556/image-captions-on-hover*/
+
+.card-title {
+	display: none;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 10px;
+	background: rgba(255, 255, 255, .8);
+}
+
+
+article:hover .card-title{
+	display: block;
+	transform: scale(1.04)
+	-webkit-transform: scale(1.04);
+}
+
+.animation {
+	height: 200px;
+	min-width: 500px;
+	position: relative;
+}
+
+.paw {
+	max-height: 50px;
+	max-width: 50px;
+	position: absolute;
+}
+
+.animation:hover .paw{
+	animation: paw-slide 2s linear;
+	animation-timing-function: ease-in-out;
+	animation-delay: .5s;
+	-webkit-animation: paw-slide 2s linear;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-delay: .5s;
+
+}
+
+@keyframes paw-slide {
+	0% {
+		left: 0;
+		top: 50px;
+	}
+
+	50% {
+		left: 50px;
+		top: 150px;
+	}
+
+	100% {
+		left: 300px;
+		top: 50px;
+	}
+}
+
+
+
+@media screen and (min-width: 550px) {
+
+	.cards{
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.card-img {
+		max-height: 200px;
+	}
+
+	#card-1 {
+		grid-column: 1 / span 1;
+		grid-row: 1 / span 1;
+	}
+
+	#card-2 {
+		grid-column: 2 / span 1;
+		grid-row: 1 / span 1;
+	}
+
+	#card-3 {
+		grid-column: 1 / span 1;
+		grid-row: 2 / span 1;
+	}
+
+	#card-4 {
+		grid-column: 2 / span 1;
+		grid-row: 2 / span 1;
+	}
+
+	.paw {
+		max-width: 100px;
+	}
+
+	@keyframes paw-slide {
+	0% {
+		left: 0;
+		top: 50px;
+	}
+
+	50% {
+		left: 200px;
+		top: 150px;
+	}
+
+	100% {
+		left: 480px;
+		top: 50px;
+	}
+	}
+} 
+
+
+@media screen and (min-width: 880px) {
+
+	.card-img {
+		max-height: 250px;
+	}
+
+	.cards {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	#card-1 {
+		grid-column: 1 / span 1;
+		grid-row: 1 / span 1;
+	}
+
+	#card-2 {
+		grid-column: 2 / span 1;
+		grid-row: 1 / span 1;
+	}
+
+	#card-3 {
+		grid-column: 3 / span 1;
+		grid-row: 1 / span 1;
+	}
+
+	.animation {
+		height: 300px;
+		width: 100%;
+	}
+
+	.paw {
+		max-width: 200px;
+		max-height: 100px;
+	}
+
+	@keyframes paw-slide {
+	0% {
+		left: 0;
+		top: 50px;
+	}
+
+	50% {
+		left: 300px;
+		top: 150px;
+	}
+
+	100% {
+		left: 800px;
+		top: 50px;
+	}
+}
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+	.animation:hover .paw {
+		animation: none;
+		-webkit-animation: none;
+	}
+
+}
+
+/*
+references: 
+https://codepen.io/ramenhog/pen/MpORPa
+https://glitch.com/edit/#!/grid-cats?path=styles.css:53:20
+https://grid-cats.glitch.me/
+
+animation:
+https://learn.shayhowe.com/advanced-html-css/transitions-animations/
+*/
+
+
+
